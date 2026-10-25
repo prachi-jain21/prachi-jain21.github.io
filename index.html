@@ -4,210 +4,275 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Prachi Jain – Portfolio</title>
+<meta name="description" content="Prachi Jain, final-year Mechatronics student at Thapar Institute. Projects in data analysis, embedded systems and design.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#F4F6F8; --surface:#FFFFFF; --ink:#16212E; --muted:#56657A; --line:#D5DCE4;
-  --navy:#1F3A6E; --amber:#C98A1E; --bar:#C9D5EA;
-  --head:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
-  --text:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
-  color-scheme:light;
-  box-sizing:border-box;
-  padding-top:env(safe-area-inset-top,0px);
-  padding-bottom:env(safe-area-inset-bottom,0px);
+:root{--bg:#EDF1EE;--pn:#E2E9E4;--ink:#18231E;--mute:#58675F;--line:#CBD6CF;--ac:#2C6B4B;--acs:#D3E6DA;--c:#FFFFFF;
+--h:"DM Serif Display",Georgia,serif;--t:"DM Sans","Segoe UI",Arial,sans-serif;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111815;--pn:#17211C;--ink:#E6EEE9;--mute:#98A8A0;--line:#27342D;--ac:#86D3A8;--acs:#1B3326;--c:#18221D;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111815;--pn:#17211C;--ink:#E6EEE9;--mute:#98A8A0;--line:#27342D;--ac:#86D3A8;--acs:#1B3326;--c:#18221D;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--t)}
+a{color:var(--ac)}a:focus-visible,button:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:4px}
+.app{display:grid;grid-template-columns:320px 1fr;min-height:100vh}
+aside{position:sticky;top:0;height:100vh;background:var(--pn);border-right:1px solid var(--line);padding:44px 32px;display:flex;flex-direction:column}
+aside h1{font:400 44px/1.02 var(--h);margin:0 0 14px;letter-spacing:-.01em}
+aside p{margin:0 0 22px;color:var(--mute);font-size:16px}
+nav{display:flex;flex-direction:column;gap:2px;margin:6px 0 24px;position:relative;padding-left:16px}
+nav::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--line)}
+nav i{position:absolute;left:0;top:0;width:2px;height:0;background:var(--ac);transition:height .15s}
+nav a{color:var(--mute);text-decoration:none;padding:5px 0;font-size:16px}
+nav a:hover,nav a.on{color:var(--ink)}nav a.on{font-weight:700}
+.side{margin-top:auto;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.b{font:500 15px var(--t);padding:8px 16px;border-radius:8px;border:1px solid var(--line);background:var(--c);color:var(--ink);text-decoration:none;cursor:pointer}
+.b:hover{border-color:var(--ac)}
+main{padding:56px clamp(24px,6vw,72px) 80px;max-width:860px}
+section{padding:0 0 56px}
+h2{font:400 36px/1.1 var(--h);margin:0 0 6px}
+.lead{color:var(--mute);margin:0 0 22px}
+.hi{font:400 clamp(26px,3.6vw,36px)/1.25 var(--h);margin:0 0 56px;max-width:22em}
+.hi em{font-style:normal;color:var(--ac)}
+.fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{font:500 14px var(--t);padding:5px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--mute);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ac);color:var(--bg);border-color:var(--ac)}
+.pj{border-top:1px solid var(--line)}.pj:last-child{border-bottom:1px solid var(--line)}
+.pj[hidden]{display:none}
+.pj>button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:1fr auto;gap:2px 16px;width:100%;padding:16px 4px;cursor:pointer}
+.pj>button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.pj h3{font:400 23px/1.2 var(--h);margin:0}
+.pj .y{color:var(--mute);font-size:14px;grid-row:1;grid-column:2;align-self:center}
+.pj .s{grid-column:1/3;color:var(--mute);font-size:15.5px}
+.pj>button:hover h3{color:var(--ac)}
+.pj .d{display:grid;grid-template-rows:0fr;transition:grid-template-rows .25s}
+.pj.o .d{grid-template-rows:1fr}
+.pj .d>div{overflow:hidden}
+.pj .in{padding:2px 4px 18px}
+.pj ul{margin:0 0 10px;padding-left:18px;font-size:16px}.pj li{margin-bottom:6px}
+.tg span{display:inline-block;background:var(--acs);color:var(--ac);font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;margin:0 6px 4px 0}
+.row{display:grid;grid-template-columns:150px 1fr;gap:2px 24px;margin-bottom:28px}
+.row .w{color:var(--mute);font-size:14px;padding-top:4px}
+.row h3{font:400 22px/1.2 var(--h);margin:0}.row .o{margin:2px 0 6px;color:var(--mute);font-size:16px}
+.row ul{margin:0;padding-left:18px}.row li{margin-bottom:6px}
+.sk{display:grid;grid-template-columns:150px 1fr;gap:10px 24px}.sk b{font-weight:700}
+.pill{display:inline-block;border:1px solid var(--line);background:var(--c);border-radius:8px;padding:1px 11px;margin:0 6px 6px 0;font-size:15px}
+.gr{width:100%;max-width:230px;height:auto;margin:0 0 6px;overflow:visible}.gr path,.gr circle{fill:none;stroke:var(--ac);stroke-width:1.6;stroke-linejoin:round}.gh{font-size:13px;color:var(--mute);margin:0 0 16px}
+@media(max-width:860px){
+  .gr,.gh{display:none}
+  .app{display:block}aside{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:32px 24px}
+  nav{flex-direction:row;flex-wrap:wrap;gap:4px 16px;padding-left:0}nav::before,nav i{display:none}
+  .side{flex-direction:row;flex-wrap:wrap;margin-top:6px}.row,.sk{grid-template-columns:1fr}.sk b{margin-top:10px}
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#0F1620; --surface:#17212E; --ink:#E6ECF2; --muted:#9AA8BA; --line:#2A3748;
-    --navy:#8FB0F0; --amber:#E3A94B; --bar:#2B3C57; color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0F1620; --surface:#17212E; --ink:#E6ECF2; --muted:#9AA8BA; --line:#2A3748;
-  --navy:#8FB0F0; --amber:#E3A94B; --bar:#2B3C57; color-scheme:dark;
-}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--text)}
-a{color:var(--navy)}
-a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.wrap{max-width:800px;margin:0 auto;padding:0 22px}
-nav{display:flex;gap:18px;flex-wrap:wrap;padding:22px 0 0;font-size:14px}
-nav a{color:var(--muted);text-decoration:none}
-nav a:hover{color:var(--ink)}
-header{padding:56px 0 40px}
-h1{font:700 clamp(40px,8vw,68px)/1.02 var(--head);margin:0 0 18px;letter-spacing:-.02em}
-.lede{font-size:clamp(18px,2.6vw,22px);line-height:1.5;max-width:34em;margin:0 0 10px}
-.sub{color:var(--muted);margin:0 0 26px}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:10px 18px;border-radius:6px;font-weight:600;text-decoration:none;font-size:15px}
-.btn.p{background:var(--navy);color:var(--bg)}
-.btn.s{border:1px solid var(--line);color:var(--ink)}
-.funnel{margin-top:44px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px 22px 16px}
-.funnel h2{font:600 15px/1.3 var(--head);margin:0 0 14px;color:var(--muted)}
-.row{margin:0 0 10px}
-.bar{height:34px;border-radius:4px;background:var(--bar);display:flex;align-items:center;padding:0 12px;font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;transform-origin:left;animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
-.bar.hot{background:var(--amber);color:#16212E}
-.row:nth-child(2) .bar{animation-delay:.12s}.row:nth-child(3) .bar{animation-delay:.24s}.row:nth-child(4) .bar{animation-delay:.36s}
-@keyframes grow{from{transform:scaleX(0);opacity:.2}to{transform:scaleX(1);opacity:1}}
-@media (prefers-reduced-motion:reduce){.bar{animation:none}html{scroll-behavior:auto}}
-.cap{font-size:13px;color:var(--muted);margin:2px 0 8px}
-.note{font-size:12px;color:var(--muted);margin:6px 0 0}
-section{padding:40px 0;border-top:1px solid var(--line)}
-h2.t{font:700 28px/1.2 var(--head);margin:0 0 22px;letter-spacing:-.01em}
-.item{display:grid;grid-template-columns:150px 1fr;gap:6px 26px;margin-bottom:30px}
-.item:last-child{margin-bottom:0}
-.when{color:var(--muted);font-size:14px;padding-top:3px}
-.item h3{font:600 19px/1.3 var(--head);margin:0}
-.where{color:var(--muted);margin:2px 0 8px;font-size:15px}
-.item ul{margin:0;padding-left:18px}
-.item li{margin-bottom:6px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.tags span{font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--muted)}
-.skills{display:grid;grid-template-columns:150px 1fr;gap:10px 26px}
-.skills b{font-weight:600}
-.skills div+div{margin:0}
-footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-@media (max-width:640px){
-  .item,.skills{grid-template-columns:1fr;gap:2px}
-  .skills b{margin-top:8px}
-  .bar{font-size:12.5px;padding:6px 8px;height:auto;min-height:34px;white-space:normal;line-height:1.25}
-}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pj .d,nav i{transition:none}}
+
+body{font-size:17.5px;line-height:1.72}
+.app{grid-template-columns:340px 1fr}
+aside{padding:56px 36px;overflow-y:auto}
+aside h1{font-size:50px;margin-bottom:18px}
+aside p{margin-bottom:34px;line-height:1.6}
+nav{margin:8px 0 34px}nav a{padding:7px 0}
+.gr{margin-bottom:10px}.gh{margin-bottom:26px}.side{gap:10px}
+main{padding:72px clamp(28px,7vw,96px) 120px;max-width:940px}
+section{padding:0 0 80px}
+section+section{border-top:1px solid var(--line);padding-top:72px}
+section:last-child{padding-bottom:0}
+h2{font-size:40px;margin-bottom:12px}
+.lead{margin-bottom:34px;max-width:36em}
+.hi{margin-bottom:84px}
+#about p:not(.hi):not(.lead){max-width:40em;line-height:1.8}
+.fl{margin-bottom:28px;gap:10px}.chip{padding:7px 16px}
+.pj>button{padding:26px 6px;gap:6px 20px}
+.pj h3{font-size:25px}
+.pj .s{line-height:1.55}
+.pj .in{padding:2px 6px 30px;max-width:42em}
+.pj ul{font-size:16.5px;line-height:1.7}.pj li{margin-bottom:12px}
+.tg{margin-top:16px}
+.row{grid-template-columns:170px 1fr;gap:4px 40px;margin-bottom:56px}
+.row:last-child{margin-bottom:0}
+.row h3{font-size:25px}.row .o{margin:6px 0 16px}
+.row ul{line-height:1.7}.row li{margin-bottom:12px}
+.sk{grid-template-columns:170px 1fr;gap:26px 40px}
+.pill{padding:3px 13px;margin:0 8px 10px 0}
+@media(max-height:760px) and (min-width:861px){aside{padding:36px 32px}.gr{max-width:170px}aside p{margin-bottom:22px}nav{margin-bottom:20px}}
+@media(max-width:860px){.app{display:block}aside{padding:36px 24px;overflow:visible}main{padding:48px 24px 80px}section{padding-bottom:56px}section+section{padding-top:56px}.row,.sk{grid-template-columns:1fr;gap:4px}.row{margin-bottom:44px}.sk b{margin-top:16px}h2{font-size:34px}aside h1{font-size:44px}}
+
+h2{display:block;width:fit-content;border-bottom:2px solid var(--ac);padding-bottom:6px;margin-bottom:18px}
+.pts{margin:0;padding-left:22px;max-width:44em}
+.pts li{margin-bottom:14px;padding-left:4px;line-height:1.65}
+.pts li::marker{color:var(--ac)}
+.pts b{font-weight:700}
 </style>
 </head>
 <body>
-<div class="wrap">
-<nav aria-label="Sections">
-  <a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#leadership">Leadership</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
-</nav>
-
-<header>
+<div class="app">
+<aside>
   <h1>Prachi Jain</h1>
-  <p class="lede">Mechatronics engineering student who turns messy data into clear decisions, and wants to turn real user problems into shipped features.</p>
-  <p class="sub">Final year at Thapar Institute, Patiala. Looking for a product management internship.</p>
-  <div class="btns">
-    <a class="btn p" href="mailto:prachi.j2106@gmail.com">Email me</a>
-    <a class="btn s" href="https://www.linkedin.com/in/prachi-jain-142b50336" target="_blank" rel="noopener">LinkedIn</a>
+  <p>Mechatronics engineering student at Thapar Institute, Patiala. Final year, CGPA 8.76.</p>
+  <nav id="nav" aria-label="Sections"><i id="pg"></i>
+    <a href="#about">About</a><a href="#work">Projects</a><a href="#exp">Experience</a><a href="#skills">Skills</a><a href="#edu">Education</a><a href="#certs">Certificates</a><a href="#contact">Contact</a>
+  </nav>
+  <svg class="gr" id="gr" viewBox="0 0 200 120" role="img" aria-label="Two meshing gears that turn as you scroll"><g id="ga"><path id="pa"/><circle cx="62" cy="62" r="7"/></g><g id="gb"><path id="pb"/><circle cx="134.3" cy="62" r="5"/></g></svg>
+  <p class="gh">Scroll to turn the gears.</p>
+  <div class="side">
+    <a class="b" href="mailto:prachi.j2106@gmail.com">Email me</a>
+    <a class="b" href="https://www.linkedin.com/in/prachi-jain-142b50336" target="_blank" rel="noopener">LinkedIn</a>
+    <button class="b" id="tg" type="button" aria-label="Switch light or dark theme">Light / dark</button>
   </div>
+</aside>
 
-  <div class="funnel" role="img" aria-label="Funnel from 19,300 transactions down to 16 high-demand products to restock first">
-    <h2>From data to action: my SQL inventory project</h2>
-    <div class="row"><div class="bar" style="width:100%">19,300 transactions · 12 stores · 60 products</div></div>
-    <div class="row"><div class="bar" style="width:74%">7.1% of store-product pairs out of stock</div></div>
-    <div class="row"><div class="bar" style="width:52%">68 records below reorder level</div></div>
-    <div class="row"><div class="bar hot" style="width:36%">16 products to restock first</div></div>
-    <p class="note">Bar lengths are illustrative, not to scale.</p>
-  </div>
-</header>
-
-<section id="projects">
-  <h2 class="t">Projects</h2>
-  <div class="item">
-    <div class="when">Jul 2026</div>
-    <div>
-      <h3>SQL-based sales and inventory analysis</h3>
-      <p class="where">Simulated retail dataset</p>
-      <ul>
-        <li>Designed a relational schema (stores, products, sales, inventory) with about 19,300 transactions across 12 stores and 60 products.</li>
-        <li>Wrote joins, CTEs and window functions (RANK, LAG, NTILE, running totals) to compute regional revenue share, month-on-month growth and top products per category.</li>
-        <li>Found a 26.7% revenue jump in May and a 7.1% stock-out rate, then flagged 68 store-product records for 16 high-demand products below reorder level.</li>
-      </ul>
-      <div class="tags"><span>SQL</span><span>Data analysis</span></div>
-    </div>
-  </div>
-  <div class="item">
-    <div class="when">Aug 2026</div>
-    <div>
-      <h3>Interactive multimedia website</h3>
-      <p class="where">Built from scratch for friends</p>
-      <ul>
-        <li>Planned the content, page structure and interactions around the audience experience, with images, music and video.</li>
-        <li>Used HTML for structure, CSS for layout and styling, and JavaScript for interactive playback.</li>
-        <li>Used AI-assisted coding tools with structured prompts, and reviewed and debugged the generated code. Owned the project from planning to release.</li>
-      </ul>
-      <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-    </div>
-  </div>
-  <div class="item">
-    <div class="when">Sept 2025 – Present</div>
-    <div>
-      <h3>Geothermal heating and cooling system</h3>
-      <p class="where">Startup research project</p>
-      <ul>
-        <li>Built a multi-depth sensing platform with ESP32, MAX31865 and PT100 sensors to explore underground thermal gradients and inform design decisions.</li>
-        <li>Used Power BI to analyse temperature variations across sensor depths and surface trends in soil temperature over a two-month monitoring period.</li>
-      </ul>
-      <div class="tags"><span>ESP32</span><span>Sensors</span><span>Power BI</span></div>
-    </div>
-  </div>
+<main>
+<section id="about">
+  <p class="hi">I build sensing systems, then <em>read the data</em> they produce to decide what to improve next.</p>
+  <h2>About</h2>
+  <p class="lead">Based in Agra, Uttar Pradesh. Open to internships in product, data, operations and engineering.</p>
+  <ul class="pts">
+    <li>I work across hardware and data: ESP32 sensor platforms, SQL analysis, Power BI dashboards and CAD.</li>
+    <li>At HCCB, I used root cause analysis to find five causes of bottle rejection and downtime.</li>
+    <li>I lead a mechanical team of around 10 at GeothermX, our college startup.</li>
+    <li>I like problems that start messy and end with a clear decision.</li>
+  </ul>
 </section>
 
-<section id="experience">
-  <h2 class="t">Experience</h2>
-  <div class="item">
-    <div class="when">Jun – Jul 2026</div>
-    <div>
-      <h3>Supply Chain Intern</h3>
-      <p class="where">Hindustan Coca-Cola Beverages Pvt. Ltd. (HCCB), Goblej, Gujarat</p>
-      <ul>
-        <li>Analysed a month of ASSP line loss data and used root cause analysis to identify five causes of bottle rejection and downtime.</li>
-        <li>Recommended a FIFO material-handling system and a clean-water cooler at the Plasmax station; preform yield improved from 96.6% to 96.7%.</li>
-        <li>Built Excel trackers and dashboards to document findings and track line performance.</li>
-      </ul>
-    </div>
+<section id="work">
+  <h2>Projects</h2>
+  <p class="lead">Select a project to read the details.</p>
+  <div class="fl" role="group" aria-label="Filter projects">
+    <button class="chip" data-f="all" aria-pressed="true">All</button><button class="chip" data-f="data" aria-pressed="false">Data</button><button class="chip" data-f="embedded" aria-pressed="false">Embedded</button><button class="chip" data-f="design" aria-pressed="false">Design</button><button class="chip" data-f="web" aria-pressed="false">Web</button>
   </div>
-  <div class="item">
-    <div class="when">Jun – Jul 2025</div>
-    <div>
-      <h3>Summer Intern</h3>
-      <p class="where">Marsons Electrical Industries Pvt. Ltd., Agra, Uttar Pradesh</p>
-      <ul><li>Performed dimensional inspection and testing on power transformers during assembly and supported documentation of test results.</li></ul>
-    </div>
-  </div>
+
+  <div class="pj" data-t="data"><button aria-expanded="false"><h3>Sales and inventory analysis</h3><span class="y">Jul 2026</span><span class="s">SQL analysis that turned 19,300 transactions into a restock list.</span></button><div class="d"><div><div class="in"><ul>
+    <li>Designed a relational schema (stores, products, sales, inventory) across 12 stores and 60 products.</li>
+    <li>Used joins, CTEs and window functions (RANK, LAG, NTILE, running totals) for revenue share, month-on-month growth and top products per category.</li>
+    <li>Found a 26.7% revenue jump in May and a 7.1% stock-out rate, and flagged 68 store-product records for 16 high-demand products below reorder level.</li></ul><div class="tg"><span>SQL</span><span>Analysis</span></div></div></div></div></div>
+
+  <div class="pj" data-t="embedded data design"><button aria-expanded="false"><h3>Geothermal heating and cooling system</h3><span class="y">Sept 2025 – now</span><span class="s">Underground temperature sensing and simulation for a startup research project.</span></button><div class="d"><div><div class="in"><ul>
+    <li>Built a multi-depth ESP32, MAX31865 and PT100 sensing platform to explore underground thermal gradients and inform design decisions.</li>
+    <li>Used Power BI to analyse temperature variations across sensor depths over a two-month monitoring period.</li>
+    <li>Ran ANSYS simulations of heat exchange and modelled the pipe in AutoCAD.</li></ul><div class="tg"><span>ESP32</span><span>Power BI</span><span>ANSYS</span><span>AutoCAD</span></div></div></div></div></div>
+
+  <div class="pj" data-t="embedded design"><button aria-expanded="false"><h3>Smart vehicle clamping system</h3><span class="y">Jan 2026 – now</span><span class="s">An automated steel wheel clamp with embedded control and IoT connectivity.</span></button><div class="d"><div><div class="in"><ul>
+    <li>Designed the clamp’s mechanical model in Fusion 360.</li>
+    <li>Ran ANSYS stress analysis (FEA) under simulated vehicle loading to evaluate deformation.</li>
+    <li>Controlled by an ESP32 microcontroller with IoT connectivity.</li></ul><div class="tg"><span>ESP32</span><span>Fusion 360</span><span>ANSYS</span></div></div></div></div></div>
+
+  <div class="pj" data-t="web"><button aria-expanded="false"><h3>Interactive multimedia website</h3><span class="y">Aug 2026</span><span class="s">A media-rich site for friends, planned around the audience experience.</span></button><div class="d"><div><div class="in"><ul>
+    <li>Used HTML for structure, CSS for layout and styling, and JavaScript for interactive music and video playback.</li>
+    <li>Used AI-assisted coding tools with structured prompts, and reviewed and debugged the generated code.</li>
+    <li>Owned it end to end: content, media, testing and release.</li></ul><div class="tg"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div></div></div></div>
+
+  <div class="pj" data-t="design"><button aria-expanded="false"><h3>Parametric standard-parts library</h3><span class="y">Jul 2026</span><span class="s">Reusable Fusion 360 parts driven by user parameters.</span></button><div class="d"><div><div class="in"><ul>
+    <li>Modelled L-brackets, shaft collars, mounting plates and spacers using user parameters.</li>
+    <li>Produced 2D drawings and STEP exports for each part.</li></ul><div class="tg"><span>Fusion 360</span><span>CAD</span></div></div></div></div></div>
+
+  <div class="pj" data-t="embedded"><button aria-expanded="false"><h3>Obstacle-avoiding robot</h3><span class="y">2024</span><span class="s">An Arduino robot that senses and steers around obstacles.</span></button><div class="d"><div><div class="in"><ul>
+    <li>Used an Arduino Uno, an HC-SR04 ultrasonic sensor and motor-drive control.</li></ul><div class="tg"><span>Arduino</span><span>Sensors</span></div></div></div></div></div>
+
+  <div class="pj" data-t="embedded"><button aria-expanded="false"><h3>Smart dustbin</h3><span class="y">2024</span><span class="s">A lid that opens automatically when someone comes close.</span></button><div class="d"><div><div class="in"><ul>
+    <li>Arduino-based, with an HC-SR04 ultrasonic sensor and a servo-actuated lid for proximity-based operation.</li></ul><div class="tg"><span>Arduino</span><span>Servo</span></div></div></div></div></div>
 </section>
 
-<section id="leadership">
-  <h2 class="t">Leadership</h2>
-  <div class="item">
-    <div class="when">Aug 2025 – Present</div>
-    <div>
-      <h3>Mechanical Head</h3>
-      <p class="where">GeothermX (college startup), Thapar Institute</p>
-      <ul>
-        <li>Lead a mechanical team of around 10 members on the geothermal heating and cooling project, from design through simulation.</li>
-        <li>Coordinate mechanical work with the rest of the startup team to keep the project on track.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="item">
-    <div class="when">Aug 2024 – Present</div>
-    <div>
-      <h3>Joint Secretary</h3>
-      <p class="where">SPIC MACAY, Thapar Institute</p>
-      <ul>
-        <li>Owned end-to-end planning and execution of 3 events, including a 500-person event, leading a team of 30–40 members.</li>
-        <li>Interviewed students for society membership and coordinated team logistics across events.</li>
-      </ul>
-    </div>
-  </div>
+<section id="exp">
+  <h2>Experience and leadership</h2>
+  <p class="lead">Internships and the teams I lead.</p>
+  <div class="row"><div class="w">Jun – Jul 2026</div><div><h3>Supply Chain Intern</h3><p class="o">Hindustan Coca-Cola Beverages (HCCB), Goblej, Gujarat</p><ul>
+    <li>Analysed a month of ASSP line loss data and used root cause analysis to identify five causes of bottle rejection and downtime.</li>
+    <li>Recommended a FIFO material-handling system and a clean-water cooler at the Plasmax station; preform yield improved from 96.6% to 96.7%.</li>
+    <li>Built Excel trackers and dashboards to document findings and track line performance.</li></ul></div></div>
+  <div class="row"><div class="w">Aug 2025 – now</div><div><h3>Mechanical Head</h3><p class="o">GeothermX, college startup, Thapar Institute</p><ul>
+    <li>Lead a mechanical team of around 10 members on the geothermal heating and cooling project, from design through simulation.</li>
+    <li>Coordinate mechanical work with the rest of the startup team to keep the project on track.</li></ul></div></div>
+  <div class="row"><div class="w">Aug 2024 – now</div><div><h3>Joint Secretary</h3><p class="o">SPIC MACAY, Thapar Institute</p><ul>
+    <li>Owned end-to-end planning and execution of 3 events, including a 500-person event, leading a team of 30–40 members.</li>
+    <li>Interviewed students for society membership and coordinated team logistics across events.</li></ul></div></div>
+  <div class="row"><div class="w">Jun – Jul 2025</div><div><h3>Summer Intern</h3><p class="o">Marsons Electrical Industries, Agra</p><ul>
+    <li>Performed dimensional inspection and testing on power transformers during assembly and supported documentation of test results.</li></ul></div></div>
 </section>
 
 <section id="skills">
-  <h2 class="t">Skills and education</h2>
-  <div class="skills">
-    <b>Product and analytics</b><div>SQL, Power BI, Microsoft Excel (trackers, dashboards), root cause analysis, technical documentation, DFMEA-style failure mode analysis</div>
-    <b>Programming and web</b><div>C++, MATLAB, SQL, HTML, CSS, JavaScript, AI-assisted coding (structured prompting, code review and debugging)</div>
-    <b>Embedded and design</b><div>Arduino IDE, ESP32, sensors and actuators, PLC programming, Fusion 360, AutoCAD, Creo, ANSYS</div>
-    <b>Education</b><div>B.E. in Mechatronics, Thapar Institute of Engineering &amp; Technology, Patiala (Aug 2023 – May 2027). CGPA 8.76 / 10. Class XII 89.8% (2023) and Class X 93.6% (2021), DPS Agra.</div>
-    <b>Certifications</b><div>Supply Chain Internship Completion, HCCB (2026) · CAEV: Connected, Autonomous, Electric Vehicle Course, JSW MG Motor India (AY 2025–26) · Fusion Fundamentals for Students, Autodesk (2025) · Dissection of IC Engine &amp; Transmission, ELC (2024)</div>
+  <h2>Skills</h2>
+  <p class="lead">The tools I use most.</p>
+  <div class="sk">
+    <b>Data and analysis</b><div><span class="pill">SQL</span><span class="pill">Power BI</span><span class="pill">Excel</span><span class="pill">Root cause analysis</span><span class="pill">DFMEA-style analysis</span><span class="pill">Technical documentation</span></div>
+    <b>Programming and web</b><div><span class="pill">C++</span><span class="pill">MATLAB</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">AI-assisted coding</span></div>
+    <b>Embedded and control</b><div><span class="pill">Arduino</span><span class="pill">ESP32</span><span class="pill">Sensors and actuators</span><span class="pill">PLC and ladder logic</span></div>
+    <b>Design and simulation</b><div><span class="pill">Fusion 360</span><span class="pill">AutoCAD</span><span class="pill">Creo</span><span class="pill">ANSYS</span></div>
   </div>
 </section>
 
-<footer id="contact">
-  <p>Let’s talk: <a href="mailto:prachi.j2106@gmail.com">prachi.j2106@gmail.com</a> · <a href="https://www.linkedin.com/in/prachi-jain-142b50336" target="_blank" rel="noopener">LinkedIn</a> · Agra, Uttar Pradesh</p>
-</footer>
+<section id="edu">
+  <h2>Education</h2>
+  <p class="lead">Where I study.</p>
+  <ul class="pts">
+    <li><b>B.E. in Mechatronics</b>, Thapar Institute of Engineering &amp; Technology, Patiala (Aug 2023 – May 2027)</li>
+    <li>CGPA: 8.76 / 10</li>
+    <li><b>Class XII</b>, DPS Agra: 89.8% (2023)</li>
+    <li><b>Class X</b>, DPS Agra: 93.6% (2021)</li>
+  </ul>
+</section>
+
+<section id="certs">
+  <h2>Certifications</h2>
+  <p class="lead">Courses and programmes I have completed.</p>
+  <ul class="pts">
+    <li><b>Supply Chain Internship Completion Certificate</b>, Hindustan Coca-Cola Beverages (2026)</li>
+    <li><b>CAEV: Connected, Autonomous, Electric Vehicle Course</b>, JSW MG Motor India (AY 2025–26)</li>
+    <li><b>Fusion Fundamentals for Students</b>, Autodesk (2025)</li>
+    <li><b>Dissection of IC Engine &amp; Transmission</b>, ELC (2024)</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p class="lead">I’m looking for internships where I can work with data, systems and real users.</p>
+  <p><a href="mailto:prachi.j2106@gmail.com">prachi.j2106@gmail.com</a> · <a href="https://www.linkedin.com/in/prachi-jain-142b50336" target="_blank" rel="noopener">LinkedIn</a></p>
+</section>
+</main>
 </div>
+
+<script>
+(function(){
+var r=document.documentElement;
+try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
+document.getElementById('tg').onclick=function(){
+  var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  var n=dark?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}
+};
+var pj=document.querySelectorAll('.pj');
+pj.forEach(function(p){var b=p.querySelector('button');b.onclick=function(){
+  var open=p.classList.contains('o');
+  pj.forEach(function(x){x.classList.remove('o');x.querySelector('button').setAttribute('aria-expanded','false')});
+  if(!open){p.classList.add('o');b.setAttribute('aria-expanded','true')}
+}});
+var chips=document.querySelectorAll('.chip');
+chips.forEach(function(c){c.onclick=function(){
+  chips.forEach(function(x){x.setAttribute('aria-pressed',x===c)});
+  var f=c.dataset.f;pj.forEach(function(k){k.hidden=!(f==='all'||k.dataset.t.split(' ').indexOf(f)>-1)});
+}});
+var links=document.querySelectorAll('#nav a'),secs=document.querySelectorAll('main section'),pg=document.getElementById('pg');
+function upd(){
+  var y=window.scrollY+window.innerHeight*0.35,cur=secs[0].id;
+  secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+  links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  pg.style.height=(h>0?Math.min(1,window.scrollY/h)*100:0)+'%';
+}
+window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+var nA=14,nB=9,rA=44,rB=rA*nB/nA,cA=[62,62],cB=[62+rA+rB,62];
+function gear(c,r,n,ph){var d='',p=2*Math.PI/n,i,a,pts,k;
+  for(i=0;i<n;i++){a=i*p+ph;pts=[[r-3,a-.30*p],[r+3,a-.17*p],[r+3,a+.17*p],[r-3,a+.30*p]];
+    for(k=0;k<4;k++){d+=(i+k?'L':'M')+(c[0]+pts[k][0]*Math.cos(pts[k][1])).toFixed(1)+' '+(c[1]+pts[k][0]*Math.sin(pts[k][1])).toFixed(1)}}
+  return d+'Z'}
+document.getElementById('pa').setAttribute('d',gear(cA,rA,nA,0));
+document.getElementById('pb').setAttribute('d',gear(cB,rB,nB,Math.PI+Math.PI/nB));
+var ga=document.getElementById('ga'),gb=document.getElementById('gb'),idle=0;
+function spin(){var th=window.scrollY*0.3+idle;
+  ga.setAttribute('transform','rotate('+th.toFixed(2)+' '+cA[0]+' '+cA[1]+')');
+  gb.setAttribute('transform','rotate('+(-th*nA/nB).toFixed(2)+' '+cB[0].toFixed(1)+' '+cB[1]+')')}
+spin();
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){window.addEventListener('scroll',spin,{passive:true});(function loop(){idle+=0.12;spin();requestAnimationFrame(loop)})()}
+})();
+</script>
 </body>
 </html>
