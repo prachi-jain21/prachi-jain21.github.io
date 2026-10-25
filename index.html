@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prachi Jain – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --ink:#16212E; --muted:#56657A; --line:#D5DCE4;
+  --navy:#1F3A6E; --amber:#C98A1E; --bar:#C9D5EA;
+  --head:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --text:"IBM Plex Sans","Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1620; --surface:#17212E; --ink:#E6ECF2; --muted:#9AA8BA; --line:#2A3748;
+    --navy:#8FB0F0; --amber:#E3A94B; --bar:#2B3C57; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1620; --surface:#17212E; --ink:#E6ECF2; --muted:#9AA8BA; --line:#2A3748;
+  --navy:#8FB0F0; --amber:#E3A94B; --bar:#2B3C57; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--text)}
+a{color:var(--navy)}
+a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{max-width:800px;margin:0 auto;padding:0 22px}
+nav{display:flex;gap:18px;flex-wrap:wrap;padding:22px 0 0;font-size:14px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+header{padding:56px 0 40px}
+h1{font:700 clamp(40px,8vw,68px)/1.02 var(--head);margin:0 0 18px;letter-spacing:-.02em}
+.lede{font-size:clamp(18px,2.6vw,22px);line-height:1.5;max-width:34em;margin:0 0 10px}
+.sub{color:var(--muted);margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 18px;border-radius:6px;font-weight:600;text-decoration:none;font-size:15px}
+.btn.p{background:var(--navy);color:var(--bg)}
+.btn.s{border:1px solid var(--line);color:var(--ink)}
+.funnel{margin-top:44px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px 22px 16px}
+.funnel h2{font:600 15px/1.3 var(--head);margin:0 0 14px;color:var(--muted)}
+.row{margin:0 0 10px}
+.bar{height:34px;border-radius:4px;background:var(--bar);display:flex;align-items:center;padding:0 12px;font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;transform-origin:left;animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
+.bar.hot{background:var(--amber);color:#16212E}
+.row:nth-child(2) .bar{animation-delay:.12s}.row:nth-child(3) .bar{animation-delay:.24s}.row:nth-child(4) .bar{animation-delay:.36s}
+@keyframes grow{from{transform:scaleX(0);opacity:.2}to{transform:scaleX(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.bar{animation:none}html{scroll-behavior:auto}}
+.cap{font-size:13px;color:var(--muted);margin:2px 0 8px}
+.note{font-size:12px;color:var(--muted);margin:6px 0 0}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2.t{font:700 28px/1.2 var(--head);margin:0 0 22px;letter-spacing:-.01em}
+.item{display:grid;grid-template-columns:150px 1fr;gap:6px 26px;margin-bottom:30px}
+.item:last-child{margin-bottom:0}
+.when{color:var(--muted);font-size:14px;padding-top:3px}
+.item h3{font:600 19px/1.3 var(--head);margin:0}
+.where{color:var(--muted);margin:2px 0 8px;font-size:15px}
+.item ul{margin:0;padding-left:18px}
+.item li{margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--muted)}
+.skills{display:grid;grid-template-columns:150px 1fr;gap:10px 26px}
+.skills b{font-weight:600}
+.skills div+div{margin:0}
+footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media (max-width:640px){
+  .item,.skills{grid-template-columns:1fr;gap:2px}
+  .skills b{margin-top:8px}
+  .bar{font-size:12.5px;padding:6px 8px;height:auto;min-height:34px;white-space:normal;line-height:1.25}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Sections">
+  <a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#leadership">Leadership</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+</nav>
+
+<header>
+  <h1>Prachi Jain</h1>
+  <p class="lede">Mechatronics engineering student who turns messy data into clear decisions, and wants to turn real user problems into shipped features.</p>
+  <p class="sub">Final year at Thapar Institute, Patiala. Looking for a product management internship.</p>
+  <div class="btns">
+    <a class="btn p" href="mailto:prachi.j2106@gmail.com">Email me</a>
+    <a class="btn s" href="https://www.linkedin.com/in/prachi-jain-142b50336" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+
+  <div class="funnel" role="img" aria-label="Funnel from 19,300 transactions down to 16 high-demand products to restock first">
+    <h2>From data to action: my SQL inventory project</h2>
+    <div class="row"><div class="bar" style="width:100%">19,300 transactions · 12 stores · 60 products</div></div>
+    <div class="row"><div class="bar" style="width:74%">7.1% of store-product pairs out of stock</div></div>
+    <div class="row"><div class="bar" style="width:52%">68 records below reorder level</div></div>
+    <div class="row"><div class="bar hot" style="width:36%">16 products to restock first</div></div>
+    <p class="note">Bar lengths are illustrative, not to scale.</p>
+  </div>
+</header>
+
+<section id="projects">
+  <h2 class="t">Projects</h2>
+  <div class="item">
+    <div class="when">Jul 2026</div>
+    <div>
+      <h3>SQL-based sales and inventory analysis</h3>
+      <p class="where">Simulated retail dataset</p>
+      <ul>
+        <li>Designed a relational schema (stores, products, sales, inventory) with about 19,300 transactions across 12 stores and 60 products.</li>
+        <li>Wrote joins, CTEs and window functions (RANK, LAG, NTILE, running totals) to compute regional revenue share, month-on-month growth and top products per category.</li>
+        <li>Found a 26.7% revenue jump in May and a 7.1% stock-out rate, then flagged 68 store-product records for 16 high-demand products below reorder level.</li>
+      </ul>
+      <div class="tags"><span>SQL</span><span>Data analysis</span></div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="when">Aug 2026</div>
+    <div>
+      <h3>Interactive multimedia website</h3>
+      <p class="where">Built from scratch for friends</p>
+      <ul>
+        <li>Planned the content, page structure and interactions around the audience experience, with images, music and video.</li>
+        <li>Used HTML for structure, CSS for layout and styling, and JavaScript for interactive playback.</li>
+        <li>Used AI-assisted coding tools with structured prompts, and reviewed and debugged the generated code. Owned the project from planning to release.</li>
+      </ul>
+      <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="when">Sept 2025 – Present</div>
+    <div>
+      <h3>Geothermal heating and cooling system</h3>
+      <p class="where">Startup research project</p>
+      <ul>
+        <li>Built a multi-depth sensing platform with ESP32, MAX31865 and PT100 sensors to explore underground thermal gradients and inform design decisions.</li>
+        <li>Used Power BI to analyse temperature variations across sensor depths and surface trends in soil temperature over a two-month monitoring period.</li>
+      </ul>
+      <div class="tags"><span>ESP32</span><span>Sensors</span><span>Power BI</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="t">Experience</h2>
+  <div class="item">
+    <div class="when">Jun – Jul 2026</div>
+    <div>
+      <h3>Supply Chain Intern</h3>
+      <p class="where">Hindustan Coca-Cola Beverages Pvt. Ltd. (HCCB), Goblej, Gujarat</p>
+      <ul>
+        <li>Analysed a month of ASSP line loss data and used root cause analysis to identify five causes of bottle rejection and downtime.</li>
+        <li>Recommended a FIFO material-handling system and a clean-water cooler at the Plasmax station; preform yield improved from 96.6% to 96.7%.</li>
+        <li>Built Excel trackers and dashboards to document findings and track line performance.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="item">
+    <div class="when">Jun – Jul 2025</div>
+    <div>
+      <h3>Summer Intern</h3>
+      <p class="where">Marsons Electrical Industries Pvt. Ltd., Agra, Uttar Pradesh</p>
+      <ul><li>Performed dimensional inspection and testing on power transformers during assembly and supported documentation of test results.</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <h2 class="t">Leadership</h2>
+  <div class="item">
+    <div class="when">Aug 2025 – Present</div>
+    <div>
+      <h3>Mechanical Head</h3>
+      <p class="where">GeothermX (college startup), Thapar Institute</p>
+      <ul>
+        <li>Lead a mechanical team of around 10 members on the geothermal heating and cooling project, from design through simulation.</li>
+        <li>Coordinate mechanical work with the rest of the startup team to keep the project on track.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="item">
+    <div class="when">Aug 2024 – Present</div>
+    <div>
+      <h3>Joint Secretary</h3>
+      <p class="where">SPIC MACAY, Thapar Institute</p>
+      <ul>
+        <li>Owned end-to-end planning and execution of 3 events, including a 500-person event, leading a team of 30–40 members.</li>
+        <li>Interviewed students for society membership and coordinated team logistics across events.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="t">Skills and education</h2>
+  <div class="skills">
+    <b>Product and analytics</b><div>SQL, Power BI, Microsoft Excel (trackers, dashboards), root cause analysis, technical documentation, DFMEA-style failure mode analysis</div>
+    <b>Programming and web</b><div>C++, MATLAB, SQL, HTML, CSS, JavaScript, AI-assisted coding (structured prompting, code review and debugging)</div>
+    <b>Embedded and design</b><div>Arduino IDE, ESP32, sensors and actuators, PLC programming, Fusion 360, AutoCAD, Creo, ANSYS</div>
+    <b>Education</b><div>B.E. in Mechatronics, Thapar Institute of Engineering &amp; Technology, Patiala (Aug 2023 – May 2027). CGPA 8.76 / 10. Class XII 89.8% (2023) and Class X 93.6% (2021), DPS Agra.</div>
+    <b>Certifications</b><div>Supply Chain Internship Completion, HCCB (2026) · CAEV: Connected, Autonomous, Electric Vehicle Course, JSW MG Motor India (AY 2025–26) · Fusion Fundamentals for Students, Autodesk (2025) · Dissection of IC Engine &amp; Transmission, ELC (2024)</div>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>Let’s talk: <a href="mailto:prachi.j2106@gmail.com">prachi.j2106@gmail.com</a> · <a href="https://www.linkedin.com/in/prachi-jain-142b50336" target="_blank" rel="noopener">LinkedIn</a> · Agra, Uttar Pradesh</p>
+</footer>
+</div>
+</body>
+</html>
